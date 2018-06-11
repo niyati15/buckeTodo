@@ -3,7 +3,8 @@ module.exports = function(sequelize, DataTypes) {
         id: {
             type: DataTypes.INTEGER,
             allowNull: false,
-            autoIncrement: true
+            autoIncrement: true,
+            primaryKey: true
         },
       name: {
         type: DataTypes.STRING,
@@ -22,6 +23,14 @@ module.exports = function(sequelize, DataTypes) {
         }
       }
     });
-    return Buckets;
+
+  Buckets.associate = function(models) {
+    // When a Bucket is deleted, also delete any associated Bookmarks
+    Buckets.hasMany(models.Bookmarks, {
+      onDelete: "cascade"
+    });
   };
+
+  return Buckets;
+};
   
