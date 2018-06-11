@@ -3,7 +3,8 @@ module.exports = function(sequelize, DataTypes) {
         id: {
             type: DataTypes.INTEGER,
             allowNull: false,
-            autoIncrement: true
+            autoIncrement: true,
+            primaryKey: true
         },
       name: {
         type: DataTypes.STRING,
@@ -29,16 +30,24 @@ module.exports = function(sequelize, DataTypes) {
             max:5,
             min: 1
         }
-      },
-      photo: {
-        type: DataTypes.STRING,
-        allowNull: false,
-        validate: {
-            notEmpty: true,
-            isURL: true
-        }
       }
     });
-    return Bookmarks;
+
+
+  Bookmarks.associate = function(models) {
+    // A Bookmarks can't be created without an Author due to the foreign key constraint
+    Bookmarks.belongsTo(models.Buckets, {
+      foreignKey: {
+        allowNull: false
+      }
+    }),
+    Bookmarks.belongsTo(models.Users, {
+      foreignKey: {
+        allowNull: false
+      }
+    })
   };
-  
+
+
+  return Bookmarks;
+};
