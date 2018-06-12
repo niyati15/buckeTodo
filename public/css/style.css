@@ -3,7 +3,7 @@ img{
     height: 50px;
 }
 
-#login
+#login, body
 {
     background: url("../image/background.jpg") fixed;
     background-size: cover;
@@ -11,9 +11,11 @@ img{
     margin: 0;
 }
 .container{
-    margin-top: 13%;
+    margin-top: 10%;
 }
-
+#card{
+    margin-top: 5%
+}
 .log-cont{
     margin-left: auto;
     margin-right: auto;
@@ -34,6 +36,7 @@ select{
     /* border-bottom: 2px solid #222; */
     width: 100%;
 }
+
 
 .wrap
 {
@@ -260,19 +263,19 @@ form.login a:hover
 	box-shadow: none;
 	border-color: #ccc;
 }
-.btn-login {
+.btn-login, .btn-primary {
 	background-color: #cc993d;
 	outline: none;
 	color: #fff;
 	font-size: 14px;
 	height: auto;
 	font-weight: normal;
-	padding: 14px 0;
+	padding: 10px 5px;
 	text-transform: uppercase;
 	border-color: #cc993d;
 }
-.btn-login:hover,
-.btn-login:focus {
+.btn-login, .btn-primary:hover,
+.btn-login, .btn-primary:focus {
 	color: #fff;
 	background-color: #cc993d;
 	border-color: #cc993d;
