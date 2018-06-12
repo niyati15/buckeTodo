@@ -5,7 +5,7 @@ img{
 
 #login, body
 {
-    background: url("../../assets/background/image.jpg") fixed;
+    background: url("../image/background.jpg") fixed;
     background-size: cover;
     padding: 0;
     margin: 0;
@@ -35,9 +35,6 @@ select{
     border-radius: 4px;
     /* border-bottom: 2px solid #222; */
     width: 100%;
-
-
-
 }
 
 

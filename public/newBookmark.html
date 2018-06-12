@@ -19,40 +19,48 @@
   <!-- As a link -->
   <nav class="navbar navbar-light bg-light">
     <a class="navbar-brand" href="#">
-      <img id="logo" src="../assets/logo.png" alt="Logo">
+      <img id="logo" src="image/logo.png" alt="Logo">
     </a>
   </nav>
-  <!-- <div class="container">
-    <form>
-      <div class="form-row">
-        <div class="form-group col-lg-12">
-          <label>Bookmark Name</label>
-          <input type="text" class="form-control" placeholder="Bookmark Name">
-        </div>
+  <!-- card start -->
+  <div class="container">
+    <div class="card">
+      <div class="card-header">
+        Add a new Bookmark
       </div>
-      <div class="form-row">
-        <div class="form-group col-lg-12">
-            <p>Buckets</p>
-              <select id="bucket">
-                  <option value="" disabled selected>--- select your bucket ---</option>
-                  <option >Travel</option>
-                  <option >Food</option>
-                  <option >Recipe</option>
-                  <option >Hikes</option>
-                  <option >Sports</option>
-              </select>
-        </div>
-      </div>
-          <div class="input-field col s12">
-            
-          </div>
-  
-          <div class="form-group">
-                <label>Description</label>
-                <textarea class="form-control" rows="5" id="description"></textarea>
-              </div>
-      <div class="form-row">
+      <div class="card-body">
+
+        <form>
+          <div class="form-row">
             <div class="form-group col-lg-12">
+              <label>Bookmark Name</label>
+              <input type="text" class="form-control" placeholder="Bookmark Name">
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group col-lg-12">
+              <p>Buckets</p>
+              <select id="bucket">
+                <option value="" disabled selected>--- select your bucket ---</option>
+                <option>Travel</option>
+                <option>Food</option>
+                <option>Recipe</option>
+                <option>Hikes</option>
+                <option>Sports</option>
+              </select>
+            </div>
+          </div>
+          <div class="input-field col s12">
+
+          </div>
+
+          <div class="form-group">
+            <label>Description</label>
+            <textarea class="form-control" rows="5" id="description"></textarea>
+          </div>
+          <div class="form-row">
+            <div class="form-group col-lg-12">
+
                 <p>Priority</p>
                   <select id="priority">
                       <option disabled selected>--- select the priority ---</option>
@@ -96,7 +104,6 @@
             </div>
           </div>
           <div class="input-field col s12">
-
           </div>
 
           <div class="form-group">
@@ -116,9 +123,19 @@
               </select>
             </div>
           </div>
+              <p>Priority</p>
+              <select id="priority">
+                <option disabled selected>--- select the priority ---</option>
+                <option>5</option>
+                <option>4</option>
+                <option>3</option>
+                <option>2</option>
+                <option>1</option>
+              </select>
+            </div>
+          </div>
           <button type="submit" class="btn btn-primary">Submit Bookmark</button>
         </form>
-
       </div>
     </div>
   </div>
