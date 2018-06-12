@@ -225,7 +225,7 @@ form.login a:hover
 } */
 .panel-login>#panel-heading a{
 	text-decoration: none;
-	color: #666;
+	color: #929292;
 	font-weight: bold;
 	font-size: 15px;
 	-webkit-transition: all 0.1s linear;
@@ -287,12 +287,12 @@ form.login a:hover
 
 .forgot-password {
 	text-decoration: underline;
-	color: #888;
+	color: #929292;
 }
 .forgot-password:hover,
 .forgot-password:focus {
 	text-decoration: underline;
-	color: #666;
+	color: #888;
 }
 
 .btn-register {
