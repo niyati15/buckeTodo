@@ -20,6 +20,7 @@ module.exports = function (app) {
     app.get("/api/user/:id/bucket", function (req, res) {
         // show all the buckets belonging to a user
         //the work of query SQL with sequalize
+        console.log("meow meow")
         db.Bookmarks.findAll({
             where: {
                 Userid: req.params.id
