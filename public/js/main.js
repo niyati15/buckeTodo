@@ -42,6 +42,41 @@ $(function() {
 
 	});
 
+	$.get("api/user/1/bucket", function (res) {
+		iteration(res);
+	});
+
+	function iteration(obj) {
+		var bucketArray = [];
+		for (var i = 0; i < obj.length; i++) {
+			var currBucket = obj[i].name;
+			if (checker(bucketArray, currBucket) === false) {
+				bucketArray.push(currBucket);
+				appendHTML(currBucket);
+			}
+		}
+	}
+
+	function checker(arr, curr) {
+		for (var j = 0; j <= arr.length; j++) {
+			if (arr[j] === curr) {
+				return true;
+			}
+			else {
+				return false;
+			}
+		}
+	}
+
+	function appendHTML(bucketName) {
+		console.log(bucketName);
+		var incoming = $(".incoming");
+		var bucketView = "<div class='card addBucket'>" +
+							"<div class='card-body' href='#'>" + bucketName + "</div>" +
+						"</div>"
+		incoming.append(bucketView);
+	}
+
 
 });
 

@@ -329,7 +329,7 @@ form.login a:hover
     margin-right: auto;
 }
 
-#addBucket{
+.addBucket{
     width: 33%;
     height: 250px;
     color: #ec5560;
