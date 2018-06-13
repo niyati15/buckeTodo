@@ -6,8 +6,15 @@ var db = require("../models");
 // =============================================================
 module.exports = function (app) {
 
-    app.get("/signup", function (req, res) {
-        console.log("/signup");
+    app.post("/api/user", function (req, res) {
+        console.log("/api/user");
+        console.log(req.body);
+        db.Users.create(req.body)
+        .then(function (dbUser) {
+            console.log("dbUser: ",dbUser);
+            res.json(dbUser);
+        });
+
     });
 
     app.get("/signin", function (req, res) {
@@ -47,7 +54,7 @@ module.exports = function (app) {
     });
 
     app.post("/api/user/:id/bucket", function (req, res) {
-        // get user id form req.params
+        // get user id form req.params 
         console.log(req.body);
         db.Buckets.create(req.body)
         .then(function (dbBucket) {

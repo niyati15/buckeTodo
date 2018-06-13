@@ -6,7 +6,31 @@ module.exports = function(sequelize, DataTypes) {
             autoIncrement: true,
             primaryKey: true
         },
-      name: {
+      username: {
+        type: DataTypes.STRING,
+        allowNull: false,
+        validate: {
+          len: [1,50],
+          notEmpty: true
+        }
+      },
+      email: {
+        type: DataTypes.STRING,
+        allowNull: false,
+        validate: {
+          len: [1,50],
+          notEmpty: true
+        }
+      },
+      password: {
+        type: DataTypes.STRING,
+        allowNull: false,
+        validate: {
+          len: [1,50],
+          notEmpty: true
+        }
+      },
+      confirmPassword: {
         type: DataTypes.STRING,
         allowNull: false,
         validate: {
