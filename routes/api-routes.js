@@ -46,23 +46,27 @@ module.exports = function (app) {
         console.log("/user/:id/:bucketID/bookmark");
     });
 
+    app.post("/api/user/:id/bucket", function (req, res) {
+        // get user id form req.params
+        console.log(req.body);
+        db.Buckets.create(req.body)
+        .then(function (dbBucket) {
+            console.log("dbBucket: ",dbBucket);
+            res.json(dbBucket);
+        });
+        // creating a bucket for a specific user
+        //the work of query SQL with sequalize
+    });
+
     app.post("/api/user/:id/", function (req, res) {
         // get bucket id form req.body
-        // creating a new bookmoark for a user in a specif bucket
+        // creating a new bookmoark for a user in a specific bucket
         //the work of query SQL with sequalize
 
-
-        //
         res.redirect("/")
         console.log("/user/:id/createBookmark");
     });
 
-    app.post("/api/user/:id/bucket", function (req, res) {
-        // get user id form req.params
-        // creating a bucket for a specific user
-        //the work of query SQL with sequalize
-        console.log("/user/:id/createbucket");
-    });
 
 
 
