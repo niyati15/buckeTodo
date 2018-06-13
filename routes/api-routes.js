@@ -10,23 +10,37 @@ module.exports = function (app) {
         console.log("/api/user");
         console.log(req.body);
         db.Users.create(req.body)
-        .then(function (dbUser) {
-            console.log("dbUser: ",dbUser);
-            res.json(dbUser);
-        });
+            .then(function (dbUser) {
+                console.log("dbUser: ", dbUser);
+                res.json(dbUser);
+            });
 
     });
 
-    app.get("/signin", function (req, res) {
-        console.log("/signin");
+    app.post("/signin", function (req, res) {
+        console.log("hi there!!");
+        db.Users.findOne({ 
+            where: {
+                email: req.body.email, 
+                password:req.body.password
+            } 
+        }).then(function(result) {
+        
+            if (!result) {
+                res.json(false);
+            } else {
+                res.json(result);
+            }
+         });
+    
     });
 
-//show all users in database
-    app.get("/api/users", function(req,res){
+    //show all users in database
+    app.get("/api/users", function (req, res) {
         db.Users.findAll({})
-        .then(function (dbUsers){
-            res.json(dbUsers);
-        })
+            .then(function (dbUsers) {
+                res.json(dbUsers);
+            })
     })
 
     app.get("/api/user/:id/bucket", function (req, res) {
@@ -62,10 +76,10 @@ module.exports = function (app) {
         // get user id form req.params 
         console.log(req.body);
         db.Buckets.create(req.body)
-        .then(function (dbBucket) {
-            console.log("dbBucket: ",dbBucket);
-            res.json(dbBucket);
-        });
+            .then(function (dbBucket) {
+                console.log("dbBucket: ", dbBucket);
+                res.json(dbBucket);
+            });
         // creating a bucket for a specific user
         //the work of query SQL with sequalize
     });

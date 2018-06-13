@@ -21,7 +21,7 @@ $(function() {
 		var username = $(".username-submit").val().trim();
 		var password = $(".password-submit").val().trim();
 		// e.preventDefault();
-		alert(username + password);
+		// alert(username + password);
 
 	});
 	//on click of register button
@@ -33,7 +33,7 @@ $(function() {
 		var password2 = $(".confirm-register").val().trim();
 		
 		if (password1 === password2){
-			alert(username + email + password1 + password2);
+			// alert(username + email + password1 + password2);
 			$(".btn-register").attr("href", "#")
 		}
 		else {
