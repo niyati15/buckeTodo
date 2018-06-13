@@ -1,5 +1,5 @@
 $(function() {
-
+	//on click of login tag
     $('#login-form-link').click(function(e) {
 		$("#login-form").delay(100).fadeIn(100);
  		$("#register-form").fadeOut(100);
@@ -7,6 +7,7 @@ $(function() {
 		$(this).addClass('active');
 		e.preventDefault();
 	});
+	//on click on register tab
 	$('#register-form-link').click(function(e) {
 		$("#register-form").delay(100).fadeIn(100);
  		$("#login-form").fadeOut(100);
@@ -14,5 +15,35 @@ $(function() {
 		$(this).addClass('active');
 		e.preventDefault();
 	});
+	//on click of log in button
+	$(".btn-login").click(function(e) {
+		// e.preventDefault();
+		var username = $(".username-submit").val().trim();
+		var password = $(".password-submit").val().trim();
+		// e.preventDefault();
+		alert(username + password);
+
+	});
+	//on click of register button
+	$(".btn-register").click(function(e) {
+		e.preventDefault();
+		var username = $(".username-register").val().trim();
+		var email = $(".email-register").val().trim();
+		var password1 = $(".password-register").val().trim();
+		var password2 = $(".confirm-register").val().trim();
+		
+		if (password1 === password2){
+			alert(username + email + password1 + password2);
+			$(".btn-register").attr("href", "#")
+		}
+		else {
+			$(".password-mismatch").text("ERROR: your password and confirmation password do not match");
+		}
+
+	});
+
 
 });
+
+//what happens with "remember me"?
+//what happens with "forgot password"?
