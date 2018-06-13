@@ -20,12 +20,29 @@ module.exports = function (app) {
     app.get("/api/user/:id/bucket", function (req, res) {
         // show all the buckets belonging to a user
         //the work of query SQL with sequalize
+        db.Bookmarks.findAll({
+            where: {
+                Userid: req.params.id
+            }
+        })
+            .then(function (dbBookmarks) {
+                res.json(dbBookmarks)
+            })
         console.log("/user/:id/bucket");
     });
 
     app.get("/api/user/:id/bucket/:bucketId/bookmark", function (req, res) {
         // all bookmarks for that bucket for a specific user
         //the work of query SQL with sequalize
+        db.Bookmarks.findAll({
+            where: {
+                UserId: req.params.id,
+                BucketId: req.params.bucketId
+            }
+        })
+            .then(function (dbBookmarks) {
+                res.json(dbBookmarks)
+            })
         console.log("/user/:id/:bucketID/bookmark");
     });
 
@@ -49,7 +66,6 @@ module.exports = function (app) {
         res.redirect("/")
         console.log("/user/:id/createBookmark");
     });
-
 
 
 
