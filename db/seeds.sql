@@ -1,10 +1,10 @@
 -- INSERT INTO buckets (name, photo) VALUES ("Recipe", "https://via.placeholder.com/250x150"),
 -- ("Fashion" "https://via.placeholder.com/350x150.jpg");
--- INSERT INTO bookmarks (name, description, priority, photos) VALUES ("Niyati's", "A hamburger, beefburger or burger is a sandwich consisting of one or more cooked patties of ground meat, usually beef, placed inside a sliced bread roll or bun. The patty may be pan fried, barbecued, or flame broiled. ... A hamburger topped with cheese is called a cheeseburger.", 4, "https://via.placeholder.com/350x150");
--- INSERT INTO users (name) VALUES ("Yumna");
-
 
 USE bucketodo_DB;
+
+
+
 
 INSERT INTO bucketodo_DB.Buckets (name, photo, createdAt, updatedAt) 
 VALUES  ("Recipes", "https://unsplash.com/search/photos/recipes", "2018-01-01 01:00:00", "2018-01-01 01:00:00"),
@@ -22,3 +22,11 @@ VALUES  ("Recipes", "https://unsplash.com/search/photos/recipes", "2018-01-01 01
         ("Animals", "https://unsplash.com/search/photos/animals", "2018-01-01 01:00:00", "2018-01-01 01:00:00"),
         ("Cars", "https://unsplash.com/search/photos/cars", "2018-01-01 01:00:00", "2018-01-01 01:00:00"),
         ("Electronics", "https://unsplash.com/search/photos/electronics", "2018-01-01 01:00:00", "2018-01-01 01:00:00");
+
+
+
+
+INSERT INTO bucketodo_DB.Users (name, createdAt, updatedAt) VALUES ("Yumna", "2018-01-01 01:00:00", "2018-01-01 01:00:00");
+
+
+INSERT INTO bucketodo_DB.Bookmarks (name, description, priority, createdAt, updatedAt) VALUES ("Food", "A hamburger, beefburger or burger is a sandwich consisting of one or more cooked patties of ground meat.", 4, "2018-01-01 01:00:00", "2018-01-01 01:00:00");
