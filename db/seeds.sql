@@ -4,7 +4,8 @@
 USE bucketodo_DB;
 
 
-INSERT INTO bucketodo_DB.Users (name, createdAt, updatedAt) VALUES ("Yumna", "2018-01-01 01:00:00", "2018-01-01 01:00:00");
+
+INSERT INTO bucketodo_DB.Users (username, email, password, createdAt, updatedAt) VALUES ("Yumna", "yumna@awesome.com", "password", "2018-01-01 01:00:00", "2018-01-01 01:00:00");
 
 
 INSERT INTO bucketodo_DB.Buckets (name, photo, createdAt, updatedAt) 
