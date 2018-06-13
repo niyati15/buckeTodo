@@ -4,6 +4,7 @@
 USE bucketodo_DB;
 
 
+INSERT INTO bucketodo_DB.Users (name, createdAt, updatedAt) VALUES ("Yumna", "2018-01-01 01:00:00", "2018-01-01 01:00:00");
 
 
 INSERT INTO bucketodo_DB.Buckets (name, photo, createdAt, updatedAt) 
@@ -26,7 +27,7 @@ VALUES  ("Recipes", "https://unsplash.com/search/photos/recipes", "2018-01-01 01
 
 
 
-INSERT INTO bucketodo_DB.Users (name, createdAt, updatedAt) VALUES ("Yumna", "2018-01-01 01:00:00", "2018-01-01 01:00:00");
 
 
-INSERT INTO bucketodo_DB.Bookmarks (name, description, priority, createdAt, updatedAt) VALUES ("Food", "A hamburger, beefburger or burger is a sandwich consisting of one or more cooked patties of ground meat.", 4, "2018-01-01 01:00:00", "2018-01-01 01:00:00");
+INSERT INTO bucketodo_DB.Bookmarks (name, description, priority, BucketId, UserId,createdAt, updatedAt)
+VALUES ("Food", "A hamburger, beefburger or burger is a sandwich consisting of one or more cooked patties of ground meat.", 4, 1, 1, "2018-01-01 01:00:00", "2018-01-01 01:00:00");
