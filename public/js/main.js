@@ -70,9 +70,9 @@ $(function() {
 
 	function appendHTML(bucketName) {
 		console.log(bucketName);
-		var incoming = $(".incoming");
+		var incoming = $(".container");
 		var bucketView = "<div class='card addBucket'>" +
-							"<div class='card-body' href='#'>" + bucketName + "</div>" +
+							"<div class='card-body crtBckt' href='#'>" + bucketName + "</div>" +
 						"</div>"
 		incoming.append(bucketView);
 	}
