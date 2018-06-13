@@ -45,5 +45,3 @@ $(function() {
 
 });
 
-//what happens with "remember me"?
-//what happens with "forgot password"?
