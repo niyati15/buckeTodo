@@ -21,8 +21,13 @@ module.exports = function (app) {
         console.log("/signin");
     });
 
-
-
+//show all users in database
+    app.get("/api/users", function(req,res){
+        db.Users.findAll({})
+        .then(function (dbUsers){
+            res.json(dbUsers);
+        })
+    })
 
     app.get("/api/user/:id/bucket", function (req, res) {
         // show all the buckets belonging to a user
