@@ -17,12 +17,14 @@ module.exports = function(app) {
     res.sendFile(path.join(__dirname, "../public/login.html"));
   });
 
-  app.get("/bookmark/new", function(req, res) {
+  app.get("/bookmark", function(req, res) {
+    
     res.sendFile(path.join(__dirname, "../public/newBookmark.html"));
   });
 
   // blog route loads blog.html
-  app.get("/bucket/new", function(req, res) {
+  app.get("/bucket", function(req, res) {
+    console.log(__dirname);
     res.sendFile(path.join(__dirname, "../public/newBucket.html"));
   });
 
