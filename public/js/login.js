@@ -20,15 +20,10 @@ $(document).ready(function() {
             if(result) {
                 console.log("matches the database");
                 console.log("result: "+result.username+ " logged in." );
-                // window.sessionStorage.setItem('logged', true);
-                // window.sessionStorage.setItem('id', result.id);
-                // window.sessionStorage.setItem('firstname', result.firstname);
-                // window.sessionStorage.setItem('lastname', result.lastname);
-                // window.sessionStorage.setItem('email', result.email);
-                // window.sessionStorage.setItem('password', result.password);
-                // window.sessionStorage.setItem('allergies', result.allergies);
-
-                // window.location.href = '/usernav/';
+                window.sessionStorage.setItem('logged', true);
+                window.sessionStorage.setItem('id', result.id);
+                window.sessionStorage.setItem('username', result.username);
+                window.location.href = '/';
 
             } else {
                 console.log("does not match database");
