@@ -17,16 +17,16 @@ module.exports = function(app) {
     res.sendFile(path.join(__dirname, "../public/login.html"));
   });
 
-  app.get("/add_bookmark", function(req, res) {
+  app.get("/bookmark/new", function(req, res) {
     res.sendFile(path.join(__dirname, "../public/newBookmark.html"));
   });
 
   // blog route loads blog.html
-  app.get("/add_bucket", function(req, res) {
+  app.get("/bucket/new", function(req, res) {
     res.sendFile(path.join(__dirname, "../public/newBucket.html"));
   });
 
-  app.get("/homepage", function(req, res) {
+  app.get("/", function(req, res) {
     res.sendFile(path.join(__dirname, "../public/homepage.html"));
   });
 

@@ -319,3 +319,12 @@ form.login a:hover
 	background-color: #cc993d;
 	border-color: #cc993d;
 }
+
+#login-submit {   background-color:#cc993d;
+}
+
+.password-mismatch {
+    color: #ec5560;
+    margin-left: auto;
+    margin-right: auto;
+}
