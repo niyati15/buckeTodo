@@ -73,8 +73,8 @@ $(function () {
 			"</div>" +
 
 			"<div class='card-footer'>" +
-			"<a href='/bookmarks' class='card-link'><strong>" + "View " + bucketName + "</strong></a>" + "<br>" +
-			"<a href='/bookmark' class='card-link'><strong>" + "Add to " + bucketName + "</strong></a>" +
+			"<a href='/bookmarks' class='card-link'><strong>" + "<img src='/../image/view.png' class='viewbucket'> "  + "</strong></a>" + 
+			"<a href='/bookmark' class='card-link'><strong>" + "<img src='/../image/add.png' class='viewbucket' style=':;'> " + "</strong></a>" +
 			"</div>" +
 			"</div>"
 		incoming.append(bucketView);
