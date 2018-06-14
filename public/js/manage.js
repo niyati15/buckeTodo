@@ -1,10 +1,10 @@
 $(document).ready(function () {
     //Grabbing the data from the create bucket form
-//   if(!sessionStorage.getItem('logged')){
-//       console.log("inside sessionstorage");
-//       window.location.href = "/login";
-//   }
-      console.log("inside manage.js");
+    //   if(!sessionStorage.getItem('logged')){
+    //       console.log("inside sessionstorage");
+    //       window.location.href = "/login";
+    //   }
+    console.log("inside manage.js");
     var bucketName = $("#bucket-name");
     var photoUrl = $("#bucket-photo-url");
     var userID = sessionStorage.getItem('id');
@@ -28,14 +28,14 @@ $(document).ready(function () {
 
     //function to submit and create a new bucket
     function submitBucket(bucket) {
-        $.post("/api/user/"+userID+"/bucket", bucket, function () {
+        $.post("/api/user/" + userID + "/bucket", bucket, function () {
             window.location.href = "/";
         });
     }
     getBuckets();
     function getBuckets() {
         console.log("inside getBuckets()");
-        $.get("/api/user/"+userID+"/bucket", renderBucketList);
+        $.get("/api/user/" + userID + "/bucket", renderBucketList);
     }
 
     function renderBucketList(data) {
@@ -50,11 +50,11 @@ $(document).ready(function () {
     }
 
     function createBucketRow(bucket) {
-        console.log("inside createBucketRow()");
+        console.log("bucket.id:", bucket.id);
         var listOption = $("<option>");
         listOption.attr("value", bucket.id);
         listOption.text(bucket.name);
-        console.log("listOption: ",listOption);
+        console.log("listOption: ", listOption);
         return listOption;
 
     }
