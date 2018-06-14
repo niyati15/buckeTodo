@@ -35,11 +35,6 @@ $(function () {
                                 "<td>" + bookmarkInfo.link + "</td>" +
                                 "<td>" + bookmarkInfo.priority + "</td>"
                             "</tr>"
-        
-
-
-
-
         tableBody.append(bookmarkView);
         linkNumber ++;
 	}
