@@ -1,7 +1,12 @@
 $(document).ready(function () {
     //Grabbing the data from the create bucket form
+//   if(!sessionStorage.getItem('logged')){
+//       console.log("inside sessionstorage");
+//       window.location.href = "/login";
+//   }
     var bucketName = $("#bucket-name");
     var photoUrl = $("#bucket-photo-url");
+    var userID = sessionStorage.getItem('id');
     var bucketForm = $("#create-bucket");
     //handle function for on submit of the form
     $(bucketForm).on("submit", function handleFormSubmit(event) {
@@ -13,18 +18,38 @@ $(document).ready(function () {
         //create a new bucket object          
         var newBucket = {
             name: bucketName.val().trim(),
-            photo: photoUrl.val().trim()
+            photo: photoUrl.val().trim(),
+            UserId: userID
         };
         submitBucket(newBucket);
     })
 
     //function to submit and create a new bucket
     function submitBucket(bucket) {
-        $.post("/api/user/1/bucket", bucket, function () {
+        $.post("/api/user/"+userID+"/bucket", bucket, function () {
             window.location.href = "/";
         });
     }
+    // function getBuckets() {
+    //     console.log("inside getBuckets()");
+    //     $.get("/api/user/1/bucket", renderBucketList);
+    // }
 
+    // function renderBucketList(data) {
+    //     console.log("inside renderBucketList()");
+    //     var rowsToAdd = [];
+    //     for (var i = 0; i < data.length; i++) {
+    //         rowsToAdd.push(createBucketRow(data[i]));
+    //     }
+    // }
+
+    // function createBucketRow(bucket) {
+    //     console.log("inside createBucketRow()");
+    //     var listOption = $("<option>");
+    //     // listOption.attr("value", bucket.id);
+    //     listOption.text(bucket.name);
+    //     return listOption;
+    // }
 });
 
 
