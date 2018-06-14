@@ -42,7 +42,10 @@ $(function() {
 
 	});
 
-	$.get("api/user/1/bucket", function (res) {
+
+	var userID = sessionStorage.getItem('id');
+	console.log(userID);
+	$.get("api/user/" + userID + "/bucket", function (res) {
 		iteration(res);
 	});
 
