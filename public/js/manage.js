@@ -4,6 +4,7 @@ $(document).ready(function () {
 //       console.log("inside sessionstorage");
 //       window.location.href = "/login";
 //   }
+      console.log("inside manage.js");
     var bucketName = $("#bucket-name");
     var photoUrl = $("#bucket-photo-url");
     var userID = sessionStorage.getItem('id');
@@ -34,7 +35,7 @@ $(document).ready(function () {
     getBuckets();
     function getBuckets() {
         console.log("inside getBuckets()");
-        $.get("/api/user/"+userID+"/buckets", renderBucketList);
+        $.get("/api/user/"+userID+"/bucket", renderBucketList);
     }
 
     function renderBucketList(data) {
@@ -53,7 +54,9 @@ $(document).ready(function () {
         var listOption = $("<option>");
         listOption.attr("value", bucket.id);
         listOption.text(bucket.name);
+        console.log("listOption: ",listOption);
         return listOption;
+
     }
 });
 

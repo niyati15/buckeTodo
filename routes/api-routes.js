@@ -77,7 +77,6 @@ module.exports = function (app) {
             .then(function (dbBookmarks) {
                 res.json(dbBookmarks)
             })
-        console.log("/user/:id/bucket");
     });
 
     //GET all bookmarks belonging to buckets of a user
