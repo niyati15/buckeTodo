@@ -345,12 +345,14 @@ form.login a:hover
 }
 .crtBckt{
     margin-left: 45%;
-    margin-top: 40% ;
-   
-    
+    margin-top: 40% ;   
+}
+strong{
+    color: #000000
 }
 .card-footer{
     text-align: center;
+    padding-bottom: ;
     
 }
 .card-link{
