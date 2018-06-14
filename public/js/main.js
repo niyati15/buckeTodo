@@ -1,21 +1,6 @@
 
 $(function() {
-	// //on click of login tag
-    // $('#login-form-link').click(function(e) {
-	// 	$("#login-form").delay(100).fadeIn(100);
- 	// 	$("#register-form").fadeOut(100);
-	// 	$('#register-form-link').removeClass('active');
-	// 	$(this).addClass('active');
-	// 	e.preventDefault();
-	// });
-	// //on click on register tab
-	// $('#register-form-link').click(function(e) {
-	// 	$("#register-form").delay(100).fadeIn(100);
- 	// 	$("#login-form").fadeOut(100);
-	// 	$('#login-form-link').removeClass('active');
-	// 	$(this).addClass('active');
-	// 	e.preventDefault();
-	// });
+
 	// //on click of log in button
 	// $(".btn-login").click(function(e) {
 	// 	// e.preventDefault();
@@ -48,7 +33,7 @@ $(function() {
 	$.get("api/user/1/bucket", function (res) {
 		iteration(res);
 	});
-
+	// iterate through json object we got from query call
 	function iteration(obj) {
 		var bucketArray = [];
 		for (var i = 0; i < obj.length; i++) {
@@ -59,7 +44,7 @@ $(function() {
 			}
 		}
 	}
-
+	//check if bucket name has already been captured
 	function checker(arr, curr) {
 		for (var j = 0; j <= arr.length; j++) {
 			if (arr[j] === curr) {
@@ -71,6 +56,7 @@ $(function() {
 		}
 	}
 
+	// append new bucket card onti DOM
 	function appendHTML(bucketName) {
 		// console.log(bucketName);
 		var incoming = $(".container");

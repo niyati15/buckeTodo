@@ -11,7 +11,6 @@
         crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="css/style.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script src="js/main.js" type="text/javascript"></script>
     <script src="js/manage.js" type="text/javascript"></script>
     <title>buckeTodo</title>
 </head>
@@ -20,16 +19,18 @@
     <!-- As a link -->
     <nav class="navbar navbar-light bg-light">
         <a class="navbar-brand" href="#">
-            <img id="logo" src="image/logo.png" alt="Logo">        </a>
+            <img id="logo" src="image/logo.png" alt="Logo"> 
+        </a>
     </nav>
     <div class="container" id="card" >
+        <!-- add new bucket form -->
         <div class="card">
             <div class="card-header">
                 Add new Bucket
             </div>
             <div class="card-body">
-
                 <form id="create-bucket">
+                    <!-- bucket name -->
                     <div class="form-row">
                         <div class="form-group col-lg-12">
                             <div class="form-row">
@@ -40,12 +41,14 @@
                             </div>
                         </div>
                     </div>
+                    <!-- bucket photo -->
                     <div class="form-row">
                         <div class="form-group col-lg-12">
                             <label>Photo URL</label>
                             <input id="bucket-photo-url" type="text" class="form-control" placeholder="Photo URL">
                         </div>
                     </div>
+                    <!-- submit bucket button -->
                     <button type="submit" class="btn btn-primary">Add To Bucket</button>
                 </form>
 

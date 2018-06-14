@@ -14,7 +14,8 @@ img{
     margin-top: 10%;
 }
 #card{
-    margin-top: 5%
+    margin-top: 5%;
+    margin-bottom: 5%;
 }
 .log-cont{
     margin-left: auto;
@@ -352,9 +353,9 @@ strong{
 }
 .card-footer{
     text-align: center;
-    padding-bottom: ;
-    
+    padding-bottom: 20px;
+    background: transparent;
 }
 .card-link{
-    color: black
+    color: black;
 }
