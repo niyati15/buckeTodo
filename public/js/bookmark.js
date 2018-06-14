@@ -14,9 +14,9 @@ $(function () {
             bookmarkArray.push(currBookmark);
 
             var bookmarkInfo = {
-                name: obj[i].name
-                description: obj[i].description
-                link: obj[i].url
+                name: obj[i].name,
+                description: obj[i].description,
+                link: obj[i].url,
                 priority: obj[i].priority
             };
 
