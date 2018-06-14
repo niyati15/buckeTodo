@@ -344,7 +344,7 @@ form.login a:hover
 .card-header{
     font-size: 20px
 }
-.crtBckt{
+#adBckt{
     margin-left: 45%;
     margin-top: 40% ;   
 }
@@ -354,8 +354,11 @@ strong{
 .card-footer{
     text-align: center;
     padding-bottom: 20px;
-    background: transparent;
+    background: transparent;    
 }
 .card-link{
     color: black;
+}
+.card-body{
+    background: blue
 }

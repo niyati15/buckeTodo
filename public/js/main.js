@@ -38,9 +38,10 @@ var userID = sessionStorage.getItem('id');
 		var bucketArray = [];
 		for (var i = 0; i < obj.length; i++) {
 			var currBucket = obj[i].name;
-			if (checker(bucketArray, currBucket) === false) {
-				bucketArray.push(currBucket);
-				appendHTML(currBucket);
+			var currPhoto = obj[i].photo
+			if (checker(bucketArray, currBucket, currPhoto) === false) {
+				bucketArray.push(currBucket, currPhoto);
+				appendHTML(currBucket, currPhoto);
 			}
 		}
 	}
@@ -52,22 +53,24 @@ var userID = sessionStorage.getItem('id');
 			}
 			else {
 				return false;
-			}
+			} 
 		}
 	}
 
 	// append new bucket card onti DOM
-	function appendHTML(bucketName) {
-		// console.log(bucketName);
+	function appendHTML(bucketName, currPhoto) {
+		console.log(currPhoto);
 		var incoming = $(".container");
 		var bucketView = "<div class='card addBucket' ><a href='#'>" +
 						 "<div class='card-header'><strong>" + bucketName + "</strong></div>" +
-							"<div class='card-body crtBckt' href='#'>"  + "</div>" +
-					
-						"<div class='card-footer'>" +
-						"<a href='#' class='card-link'><strong>" + "View " + bucketName+ "</strong></a>" + "<br>" +
-						"<a href='#' class='card-link'><strong>" + "Add to "+ bucketName +"</strong></a>" +
-						"</div>" +
+							"<div class='card-body crtBckt' style='background:blue;'>"  +
+
+							// "<img src='" + currPhoto + "' style='color:blue;'>" +	
+							"</div>" +
+						// "<div class='card-footer'>" +
+						// "<a href='#' class='card-link'><strong>" + "View " + bucketName+ "</strong></a>" + "<br>" +
+						// "<a href='#' class='card-link'><strong>" + "Add to "+ bucketName +"</strong></a>" +
+						// "</div>" +
 						"</a></div>" 
 		incoming.append(bucketView);
 	}
