@@ -47,7 +47,7 @@ module.exports = function (app) {
         // show all the buckets belonging to a user
         //the work of query SQL with sequalize
         console.log("meow meow")
-        db.Bookmarks.findAll({
+        db.Buckets.findAll({
             where: {
                 Userid: req.params.id
             }
