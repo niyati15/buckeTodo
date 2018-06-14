@@ -1,6 +1,6 @@
 
 $(function() {
-
+var userID = sessionStorage.getItem('id');
 	// //on click of log in button
 	// $(".btn-login").click(function(e) {
 	// 	// e.preventDefault();
@@ -30,7 +30,7 @@ $(function() {
 
 	// });
 
-	$.get("api/user/1/bucket", function (res) {
+	$.get("api/user/"+userID+"/bucket", function (res) {
 		iteration(res);
 	});
 	// iterate through json object we got from query call
