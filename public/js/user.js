@@ -28,7 +28,7 @@ $(document).ready(function () {
     function submitUser(user) {
         console.log("submitUser() function || user: ", user);
         $.post("/api/user", user, function () {
-            window.location.href = "/";
+            window.location.href = "/login";
         });
     }
 
