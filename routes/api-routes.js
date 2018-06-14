@@ -58,6 +58,22 @@ module.exports = function (app) {
         console.log("/user/:id/bucket");
     });
 
+    ///
+    app.get("/api/user/:id/buckets", function (req, res) {
+        // show all the buckets belonging to a user
+        //the work of query SQL with sequalize
+        console.log("meow meow buckets")
+        db.Buckets.findAll({
+            where: {
+                Userid: req.params.id
+            }
+        })
+            .then(function (dbBuckets) {
+                res.json(dbBuckets)
+            })
+    });
+    ///
+
     app.get("/api/user/:id/bucket/:bucketId/bookmark", function (req, res) {
         // all bookmarks for that bucket for a specific user
         //the work of query SQL with sequalize
