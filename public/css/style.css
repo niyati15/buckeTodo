@@ -332,10 +332,16 @@ form.login a:hover
 .addBucket{
     width: 22%;
     height: 250px;
-    color: #ec5560;
+    color: black;
     float: left;
     margin: 40px;
+
   
+}
+
+
+.card-header{
+    font-size: 20px
 }
 .crtBckt{
     margin-left: 45%;
@@ -345,4 +351,8 @@ form.login a:hover
 }
 .card-footer{
     text-align: center;
+    
+}
+.card-link{
+    color: black
 }

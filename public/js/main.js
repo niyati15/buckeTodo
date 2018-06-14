@@ -1,5 +1,8 @@
 
 $(function() {
+
+
+$(function() {
 	// //on click of login tag
     // $('#login-form-link').click(function(e) {
 	// 	$("#login-form").delay(100).fadeIn(100);
@@ -45,10 +48,7 @@ $(function() {
 
 	// });
 
-
-	var userID = sessionStorage.getItem('id');
-	console.log(userID);
-	$.get("api/user/" + userID + "/bucket", function (res) {
+	$.get("api/user/1/bucket", function (res) {
 		iteration(res);
 	});
 
@@ -77,15 +77,15 @@ $(function() {
 	function appendHTML(bucketName) {
 		// console.log(bucketName);
 		var incoming = $(".container");
-		var bucketView = "<div class='card addBucket'>" +
-
-							"<div class='card-body crtBckt' href='#'>" + bucketName + "</div>" +
+		var bucketView = "<div class='card addBucket' ><a href='#'>" +
+						 "<div class='card-header'><strong>" + bucketName + "</strong></div>" +
+							"<div class='card-body crtBckt' href='#'>"  + "</div>" +
 					
 						"<div class='card-footer'>" +
-						"<a href='#' class='card-link'><strong>" + "View Bucket" + "</strong></a>" + "<br>" +
-						"<a href='#' class='card-link'><strong>" + "Add to Bucket"+ "</strong></a>" +
+						"<a href='#' class='card-link'><strong>" + "View " + bucketName+ "</strong></a>" + "<br>" +
+						"<a href='#' class='card-link'><strong>" + "Add to "+ bucketName +"</strong></a>" +
 						"</div>" +
-						"</div>" 
+						"</a></div>" 
 		incoming.append(bucketView);
 	}
 
