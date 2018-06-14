@@ -364,7 +364,10 @@ strong{
 .card-body{
     /* background: blue  */
     height: 50%;
-    padding: 0px;
+    /* padding: 0px; */
+}
+.card-bucket{
+    padding:0px;
 }
 
 #bookmark-table {

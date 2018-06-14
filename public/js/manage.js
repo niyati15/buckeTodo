@@ -1,9 +1,9 @@
 $(document).ready(function () {
     //Grabbing the data from the create bucket form
-    //   if(!sessionStorage.getItem('logged')){
-    //       console.log("inside sessionstorage");
-    //       window.location.href = "/login";
-    //   }
+      if(!sessionStorage.getItem('logged')){
+          console.log("inside sessionstorage");
+          window.location.href = "/login";
+      }
     console.log("inside manage.js");
     var bucketName = $("#bucket-name");
     var photoUrl = $("#bucket-photo-url");
