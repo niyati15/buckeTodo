@@ -1,6 +1,8 @@
 img{
-    width: 150px;
-    height: 50px;
+    /* vertical-align: middle; */
+    /* border-style: none; */
+    height: 100%;
+    width: 100%;
 }
 
 #login, body
@@ -353,17 +355,16 @@ strong{
 }
 .card-footer{
     text-align: center;
-    padding-bottom: 20px;
+    padding-bottom: 5px;
     background: transparent;    
 }
 .card-link{
     color: black;
 }
-<<<<<<< HEAD
 .card-body{
-    background: blue
+    /* background: blue  */
+    height: 50%;
 }
-=======
 
 #bookmark-table {
     width: 80%;
@@ -371,4 +372,7 @@ strong{
     margin-right: auto;
     margin-top: 8%;
 }
->>>>>>> 5f8e37de1b0b21b805c6f6cbfe67a4251f422cc5
+#logo{
+    width: 150px;
+    height: 50px;
+}

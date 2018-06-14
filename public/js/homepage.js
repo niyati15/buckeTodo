@@ -61,25 +61,18 @@ var userID = sessionStorage.getItem('id');
 	function appendHTML(bucketName, currPhoto) {
 		console.log(currPhoto);
 		var incoming = $(".container");
-		var bucketView = "<div class='card addBucket' ><a href='#'>" +
+		var bucketView = "<div class='card addBucket' >" +
 						 "<div class='card-header'><strong>" + bucketName + "</strong></div>" +
-							"<div class='card-body crtBckt' style='background:blue;'>"  +
+							"<div class='card-body crtBckt');>"  +
 
-							// "<img src='" + currPhoto + "' style='color:blue;'>" +	
+							"<img src='" + currPhoto + "' style='color:blue;' >" +	
 							"</div>" +
-<<<<<<< HEAD:public/js/main.js
-						// "<div class='card-footer'>" +
-						// "<a href='#' class='card-link'><strong>" + "View " + bucketName+ "</strong></a>" + "<br>" +
-						// "<a href='#' class='card-link'><strong>" + "Add to "+ bucketName +"</strong></a>" +
-						// "</div>" +
-=======
 					
 						"<div class='card-footer'>" +
 						"<a href='#' class='card-link'><strong>" + "View " + bucketName+ "</strong></a>" + "<br>" +
 						"<a href='/bookmark' class='card-link'><strong>" + "Add to "+ bucketName +"</strong></a>" +
 						"</div>" +
->>>>>>> 5f8e37de1b0b21b805c6f6cbfe67a4251f422cc5:public/js/homepage.js
-						"</a></div>" 
+						"</div>" 
 		incoming.append(bucketView);
 	}
 
