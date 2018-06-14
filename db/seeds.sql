@@ -8,22 +8,10 @@ USE bucketodo_DB;
 INSERT INTO bucketodo_DB.Users (username, email, password, createdAt, updatedAt) VALUES ("Yumna", "yumna@awesome.com", "password", "2018-01-01 01:00:00", "2018-01-01 01:00:00");
 
 
-INSERT INTO bucketodo_DB.Buckets (name, photo, createdAt, updatedAt) 
-VALUES  ("Recipes", "https://unsplash.com/search/photos/recipes", "2018-01-01 01:00:00", "2018-01-01 01:00:00"),
-        ("Fashion", "https://unsplash.com/search/photos/fashion", "2018-01-01 01:00:00", "2018-01-01 01:00:00"),
-        ("Craft", "https://unsplash.com/search/photos/craft", "2018-01-01 01:00:00", "2018-01-01 01:00:00"),
-        ("Travel", "https://unsplash.com/search/photos/travel", "2018-01-01 01:00:00", "2018-01-01 01:00:00"),
-        ("Party", "https://unsplash.com/search/photos/party", "2018-01-01 01:00:00", "2018-01-01 01:00:00"),
-        ("Wedding", "https://unsplash.com/search/photos/wedding", "2018-01-01 01:00:00", "2018-01-01 01:00:00"),
-        ("Humor", "https://unsplash.com/search/photos/funny", "2018-01-01 01:00:00", "2018-01-01 01:00:00"),
-        ("Educational", "https://unsplash.com/search/photos/educational", "2018-01-01 01:00:00", "2018-01-01 01:00:00"),
-        ("Music", "https://unsplash.com/search/photos/music", "2018-01-01 01:00:00", "2018-01-01 01:00:00"),
-        ("Health", "https://unsplash.com/search/photos/health", "2018-01-01 01:00:00", "2018-01-01 01:00:00"),
-        ("Life Hacks", "https://unsplash.com/search/photos/hacks", "2018-01-01 01:00:00", "2018-01-01 01:00:00"),
-        ("Sports", "https://unsplash.com/search/photos/sports", "2018-01-01 01:00:00", "2018-01-01 01:00:00"),
-        ("Animals", "https://unsplash.com/search/photos/animals", "2018-01-01 01:00:00", "2018-01-01 01:00:00"),
-        ("Cars", "https://unsplash.com/search/photos/cars", "2018-01-01 01:00:00", "2018-01-01 01:00:00"),
-        ("Electronics", "https://unsplash.com/search/photos/electronics", "2018-01-01 01:00:00", "2018-01-01 01:00:00");
+INSERT INTO bucketodo_DB.Buckets (name, photo, UserId, createdAt, updatedAt) 
+VALUES  ("Recipes", "https://unsplash.com/search/photos/recipes", 1,"2018-01-01 01:00:00", "2018-01-01 01:00:00"),
+        ("Fashion", "https://unsplash.com/search/photos/fashion", 1, "2018-01-01 01:00:00", "2018-01-01 01:00:00"),
+        ("Craft", "https://unsplash.com/search/photos/craft", 2, "2018-01-01 01:00:00", "2018-01-01 01:00:00");
 
 
 
