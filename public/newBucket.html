@@ -19,10 +19,12 @@
     <!-- As a link -->
     <nav class="navbar navbar-light bg-light">
         <a class="navbar-brand" href="#">
-            <img id="logo" src="image/logo.png" alt="Logo"> 
+            <img id="logo" src="image/logo.png" alt="Logo">
         </a>
+        <span class="navbar-text" id="name">
+        </span>
     </nav>
-    <div class="container" id="card" >
+    <div class="container" id="card">
         <!-- add new bucket form -->
         <div class="card">
             <div class="card-header">
@@ -62,6 +64,12 @@
         crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T"
         crossorigin="anonymous"></script>
+    <script>
+        // get the values from the tables
+        var name = sessionStorage.getItem('username');
+        console.log(name);
+        document.getElementById('name').innerHTML = "Welcome,     " + name;
+    </script>
 </body>
 
 </html>

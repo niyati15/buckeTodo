@@ -69,7 +69,7 @@ var userID = sessionStorage.getItem('id');
 							"</div>" +
 					
 						"<div class='card-footer'>" +
-						"<a href='#' class='card-link'><strong>" + "View " + bucketName+ "</strong></a>" + "<br>" +
+						"<a href='/bookmarks' class='card-link'><strong>" + "View " + bucketName+ "</strong></a>" + "<br>" +
 						"<a href='/bookmark' class='card-link'><strong>" + "Add to "+ bucketName +"</strong></a>" +
 						"</div>" +
 						"</a></div>" 
