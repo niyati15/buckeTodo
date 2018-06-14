@@ -30,10 +30,11 @@ module.exports = function (app) {
     });
 
     //CREATE new bookmark for a bucket belonging to user
-    app.post("/api/user/:id/", function (req, res) {
+    app.post("/api/user/:id/bookmark", function (req, res) {
+        console.log("Create new bookmark");
         db.Bookmarks.create(req.body)
             .then(function (dbBookmarks) {
-                res.json(dbBucket);
+                res.json(dbBookmarks);
             });
         // res.redirect("/")
         // console.log("/user/:id/createBookmark");

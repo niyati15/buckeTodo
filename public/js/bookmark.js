@@ -4,30 +4,37 @@ $(document).ready(function () {
 //       console.log("inside sessionstorage");
 //       window.location.href = "/login";
 //   }
-    var bucketName = $("#bookmark-name");
-    var photoUrl = $("#bucket-photo-url");
+    var bookmarkName = $("#bookmark-name");
+    var bookmarkUrl = $("#bookmark-url");
+    var bookmarkBucket = $("#bookmark-bucket");
+    var bookmarkDescription = $("#description");
+    var bookmarkPriority = $("#priority");
+    var bookmarkForm = $("#add-bookmark");
     var userID = sessionStorage.getItem('id');
-    var bucketForm = $("#create-bucket");
-    var bucketSelect = $("#bookmark-bucket");
     //handle function for on submit of the form
-    $(bucketForm).on("submit", function handleFormSubmit(event) {
+    $(bookmarkForm).on("submit", function handleFormSubmit(event) {
         event.preventDefault();
 
-        if (!bucketName.val().trim() || !photoUrl.val().trim()) {
+        if (!bookmarkName.val().trim() || !bookmarkUrl.val().trim() || !bookmarkBucket.val().trim() || !bookmarkDescription.val().trim() || !bookmarkPriority.val().trim()) {
             return;
         }
         //create a new bucket object          
-        var newBucket = {
-            name: bucketName.val().trim(),
-            photo: photoUrl.val().trim(),
+        var newBookmark = {
+            name: bookmarkName.val().trim(),
+            url:bookmarkUrl.val().trim(),
+            BucketId: bookmarkBucket.val().trim(),
+            description: bookmarkDescription.val().trim(),
+            priority: bookmarkPriority.val().trim(),
             UserId: userID
         };
-        submitBucket(newBucket);
+        console.log(bookmarkBucket.val().trim());
+        submitBucket(newBookmark);
     })
 
     //function to submit and create a new bucket
-    function submitBucket(bucket) {
-        $.post("/api/user/"+userID+"/bucket", bucket, function () {
+    function submitBucket(bookmark) {
+        console.log("inside submit bookmark");
+        $.post("/api/user/"+userID+"/bookmark", bookmark, function () {
             window.location.href = "/";
         });
     }
