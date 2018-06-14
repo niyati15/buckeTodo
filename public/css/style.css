@@ -359,6 +359,16 @@ strong{
 .card-link{
     color: black;
 }
+<<<<<<< HEAD
 .card-body{
     background: blue
 }
+=======
+
+#bookmark-table {
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 8%;
+}
+>>>>>>> 5f8e37de1b0b21b805c6f6cbfe67a4251f422cc5

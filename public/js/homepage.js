@@ -67,10 +67,18 @@ var userID = sessionStorage.getItem('id');
 
 							// "<img src='" + currPhoto + "' style='color:blue;'>" +	
 							"</div>" +
+<<<<<<< HEAD:public/js/main.js
 						// "<div class='card-footer'>" +
 						// "<a href='#' class='card-link'><strong>" + "View " + bucketName+ "</strong></a>" + "<br>" +
 						// "<a href='#' class='card-link'><strong>" + "Add to "+ bucketName +"</strong></a>" +
 						// "</div>" +
+=======
+					
+						"<div class='card-footer'>" +
+						"<a href='#' class='card-link'><strong>" + "View " + bucketName+ "</strong></a>" + "<br>" +
+						"<a href='/bookmark' class='card-link'><strong>" + "Add to "+ bucketName +"</strong></a>" +
+						"</div>" +
+>>>>>>> 5f8e37de1b0b21b805c6f6cbfe67a4251f422cc5:public/js/homepage.js
 						"</a></div>" 
 		incoming.append(bucketView);
 	}
