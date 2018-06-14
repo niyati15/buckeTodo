@@ -28,6 +28,11 @@ module.exports = function(sequelize, DataTypes) {
     // When a Bucket is deleted, also delete any associated Bookmarks
     Buckets.hasMany(models.Bookmarks, {
       onDelete: "cascade"
+    }),
+    Buckets.belongsTo(models.Users, {
+      foreignKey: {
+        allowNull: false
+      }
     });
   };
 
