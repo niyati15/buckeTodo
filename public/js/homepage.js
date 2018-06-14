@@ -1,6 +1,10 @@
 
-$(function() {
-var userID = sessionStorage.getItem('id');
+$(function () {
+	if (!sessionStorage.getItem('logged')) {
+		console.log("inside sessionstorage");
+		window.location.href = "/login";
+	}
+	var userID = sessionStorage.getItem('id');
 	// //on click of log in button
 	// $(".btn-login").click(function(e) {
 	// 	// e.preventDefault();
@@ -17,7 +21,7 @@ var userID = sessionStorage.getItem('id');
 	// 	var email = $(".email-register").val().trim();
 	// 	var password1 = $(".password-register").val().trim();
 	// 	var password2 = $(".confirm-register").val().trim();
-		
+
 	// 	if (password1 === password2){
 	// 		// alert(username + email + password1 + password2);
 	// 		$(".btn-register").attr("href", "#")
@@ -30,7 +34,7 @@ var userID = sessionStorage.getItem('id');
 
 	// });
 
-	$.get("api/user/"+userID+"/bucket", function (res) {
+	$.get("api/user/" + userID + "/bucket", function (res) {
 		iteration(res);
 	});
 	// iterate through json object we got from query call
@@ -53,7 +57,7 @@ var userID = sessionStorage.getItem('id');
 			}
 			else {
 				return false;
-			} 
+			}
 		}
 	}
 
@@ -62,17 +66,17 @@ var userID = sessionStorage.getItem('id');
 		console.log(currPhoto);
 		var incoming = $(".container");
 		var bucketView = "<div class='card addBucket' >" +
-						 "<div class='card-header'><strong>" + bucketName + "</strong></div>" +
-							"<div class='card-body crtBckt');>"  +
+			"<div class='card-header'><strong>" + bucketName + "</strong></div>" +
+			"<div class='card-body card-bucket crtBckt');>" +
 
-							"<img src='" + currPhoto + "' style='color:blue;' >" +	
-							"</div>" +
-					
-						"<div class='card-footer'>" +
-						"<a href='/bookmarks' class='card-link'><strong>" + "View " + bucketName+ "</strong></a>" + "<br>" +
-						"<a href='/bookmark' class='card-link'><strong>" + "Add to "+ bucketName +"</strong></a>" +
-						"</div>" +
-						"</div>" 
+			"<img src='" + currPhoto + "' style='color:blue;' >" +
+			"</div>" +
+
+			"<div class='card-footer'>" +
+			"<a href='/bookmarks' class='card-link'><strong>" + "View " + bucketName + "</strong></a>" + "<br>" +
+			"<a href='/bookmark' class='card-link'><strong>" + "Add to " + bucketName + "</strong></a>" +
+			"</div>" +
+			"</div>"
 		incoming.append(bucketView);
 	}
 

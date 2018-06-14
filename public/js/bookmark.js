@@ -1,9 +1,14 @@
 $(function () {
+       //Grabbing the data from the create bucket form
+  if(!sessionStorage.getItem('logged')){
+      console.log("inside sessionstorage");
+      window.location.href = "/login";
+  }
     var userId = sessionStorage.getItem('id');
     var linkNumber = 0;
 
     $.get("/api/user/:id/bucket/:bucketId/bookmark", function (res) {
-        MSFIDOSignatureAssertion(res);
+        // MSFIDOSignatureAssertion(res);
     });
 
     // iterate through json object we got from query call
@@ -39,11 +44,7 @@ $(function () {
         linkNumber ++;
 	}
 
-    //Grabbing the data from the create bucket form
-//   if(!sessionStorage.getItem('logged')){
-//       console.log("inside sessionstorage");
-//       window.location.href = "/login";
-//   }
+ 
     var bookmarkName = $("#bookmark-name");
     var bookmarkUrl = $("#bookmark-url");
     var bookmarkBucket = $("#bookmark-bucket");
