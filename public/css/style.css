@@ -330,14 +330,16 @@ form.login a:hover
 }
 
 .addBucket{
-    width: 33%;
+    width: 20%;
     height: 250px;
     color: #ec5560;
+    float: left;
+    margin: 40px;
   
 }
-#crtBckt{
+.crtBckt{
     margin-left: 45%;
-    margin-top: 25% ;
+    margin-top: 40% ;
    
     
 }

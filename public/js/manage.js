@@ -25,25 +25,6 @@ $(document).ready(function () {
         });
     }
 
-
-    function getBuckets() {
-        $.get("/api/user/1/bucket", renderBucketList);
-    }
-
-    function renderBucketList(data) {
-        var rowsToAdd = [];
-        for (var i = 0; i < data.length; i++) {
-            rowsToAdd.push(createBucketRow(data[i]));
-        }
-    }
-
-    function createBucketRow(bucket) {
-        var listOption = $("<option>");
-        listOption.attr("value", bucket.id);
-        listOption.text(bucket.name);
-        return listOption;
-    }
-
 });
 
 
