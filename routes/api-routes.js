@@ -75,6 +75,7 @@ module.exports = function (app) {
 
     app.post("/api/user/:id/bucket", function (req, res) {
         // get user id form req.params 
+        console.log("meow meow helo")
         console.log(req.body);
         db.Buckets.create(req.body)
             .then(function (dbBucket) {

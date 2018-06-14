@@ -330,7 +330,7 @@ form.login a:hover
 }
 
 .addBucket{
-    width: 20%;
+    width: 22%;
     height: 250px;
     color: #ec5560;
     float: left;
@@ -342,4 +342,7 @@ form.login a:hover
     margin-top: 40% ;
    
     
+}
+.card-footer{
+    text-align: center;
 }
