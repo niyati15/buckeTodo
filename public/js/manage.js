@@ -8,7 +8,7 @@ $(document).ready(function () {
     var photoUrl = $("#bucket-photo-url");
     var userID = sessionStorage.getItem('id');
     var bucketForm = $("#create-bucket");
-    var bucketSelect = $("bookmark-bucket");
+    var bucketSelect = $("#bookmark-bucket");
     //handle function for on submit of the form
     $(bucketForm).on("submit", function handleFormSubmit(event) {
         event.preventDefault();
