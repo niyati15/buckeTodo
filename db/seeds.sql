@@ -11,11 +11,7 @@ INSERT INTO bucketodo_DB.Users (username, email, password, createdAt, updatedAt)
 INSERT INTO bucketodo_DB.Buckets (name, photo, UserId, createdAt, updatedAt) 
 VALUES  ("Recipes", "https://unsplash.com/search/photos/recipes", 1,"2018-01-01 01:00:00", "2018-01-01 01:00:00"),
         ("Fashion", "https://unsplash.com/search/photos/fashion", 1, "2018-01-01 01:00:00", "2018-01-01 01:00:00"),
-        ("Craft", "https://unsplash.com/search/photos/craft", 2, "2018-01-01 01:00:00", "2018-01-01 01:00:00");
-
-
-
-
+        ("Craft", "https://unsplash.com/search/photos/craft", 1, "2018-01-01 01:00:00", "2018-01-01 01:00:00");
 
 
 INSERT INTO bucketodo_DB.Bookmarks (name, description, priority, BucketId, UserId,createdAt, updatedAt)
