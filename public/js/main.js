@@ -1,8 +1,5 @@
 
 $(function() {
-
-
-$(function() {
 	// //on click of login tag
     // $('#login-form-link').click(function(e) {
 	// 	$("#login-form").delay(100).fadeIn(100);

@@ -1,8 +1,43 @@
 // Make sure we wait to attach our handlers until the DOM is fully loaded.
 $(document).ready(function() {
   console.log("login.js called");
+
+	//on click of login tab
+    $('#login-form-link').click(function(e) {
+		$("#login-form").delay(100).fadeIn(100);
+ 		$("#register-form").fadeOut(100);
+		$('#register-form-link').removeClass('active');
+		$(this).addClass('active');
+		e.preventDefault();
+	});
+	//on click on register tab
+	$('#register-form-link').click(function(e) {
+		$("#register-form").delay(100).fadeIn(100);
+ 		$("#login-form").fadeOut(100);
+		$('#login-form-link').removeClass('active');
+		$(this).addClass('active');
+		e.preventDefault();
+	});
+
+	//on click of register button
+	$(".btn-register").click(function(e) {
+		e.preventDefault();
+		var username = $(".username-register").val().trim();
+		var email = $(".email-register").val().trim();
+		var password1 = $(".password-register").val().trim();
+		var password2 = $(".confirm-register").val().trim();
+		
+		if (password1 === password2){
+			// alert(username + email + password1 + password2);
+			$(".btn-register").attr("href", "#")
+		}
+		else {
+			$(".password-mismatch").text("ERROR: your password and confirmation password do not match");
+		}
+	});
+
+    //submit button 
     $(".btn-login").on("click", function(event) {
-      // Make sure to preventDefault on a submit event.
       event.preventDefault();
   
       var newLogin = {
