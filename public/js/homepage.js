@@ -1,6 +1,10 @@
-var something;
-$(function() {
-var userID = sessionStorage.getItem('id');
+
+$(function () {
+	if (!sessionStorage.getItem('logged')) {
+		console.log("inside sessionstorage");
+		window.location.href = "/login";
+	}
+	var userID = sessionStorage.getItem('id');
 	// //on click of log in button
 	// $(".btn-login").click(function(e) {
 	// 	// e.preventDefault();
@@ -17,7 +21,7 @@ var userID = sessionStorage.getItem('id');
 	// 	var email = $(".email-register").val().trim();
 	// 	var password1 = $(".password-register").val().trim();
 	// 	var password2 = $(".confirm-register").val().trim();
-		
+
 	// 	if (password1 === password2){
 	// 		// alert(username + email + password1 + password2);
 	// 		$(".btn-register").attr("href", "#")
@@ -30,7 +34,7 @@ var userID = sessionStorage.getItem('id');
 
 	// });
 
-	$.get("api/user/"+userID+"/bucket", function (res) {
+	$.get("api/user/" + userID + "/bucket", function (res) {
 		iteration(res);
 	});
 	// iterate through json object we got from query call
@@ -62,29 +66,28 @@ var userID = sessionStorage.getItem('id');
 	function appendHTML(bucketName, currPhoto, currId) {
 		console.log(currPhoto);
 		var incoming = $(".container");
-		var bucketView = "<div class='card addBucket' >"+
-							"<div data-id='" + currId +"'class='bucketClick'>" +
-								"<div class='card-header'><strong>" + bucketName + "</strong>"+
-								"</div>" +
-								"<div class='card-body crtBckt' style='background:blue;' href='#'>"  +
-									"<img src='" + currPhoto + "' style='color:blue;'>" +	
-								"</div>" +
-								"<div class='card-footer'>" +
-									"<a href='#' class='card-link'><strong>" + "View " + bucketName+ "</strong >"+
-									"</a>" + 
-									"<br>" +
-									"<a href='/viewbookmark' class='card-link'><strong>" + "Add to "+ bucketName +"</strong>"+
-									"</a>" +
-								"</div>" +
-							"</div>"+
-						"</div>" 
+		var bucketView = "<div class='card addBucket' data-id='" + currId +"' >" +
+							 "<div class='card-header'><strong>" + bucketName + "</strong>"+
+							 "</div>" +
+							 "<div class='card-body card-bucket crtBckt');>" +
+							 	"<img src='" + currPhoto + "' style='color:blue;' >" +
+							 "</div>" +
+							 "<div class='card-footer'>" +
+								"<a href='/bookmarks' class='card-link'><strong>" + 
+								"<img src='/../image/view.png' class='viewbucket'> "  + "</strong>"+
+								"</a>" + 
+								"<a href='/bookmark' class='card-link'><strong>" + 
+									"<img src='/../image/add.png' class='viewbucket' style=':;'> " + "</strong>"+
+								"</a>" +
+							 "</div>" +
+							"</div>"
 		incoming.append(bucketView);
 	}
 
 });
 
 
-$(document).on("click", ".bucketClick", function(){
+$(document).on("click", ".addBucket", function(){
 	console.log("before any session storage");
 	currId = $(this).data("id");
 	sessionStorage.removeItem("bucketId");
@@ -92,5 +95,4 @@ $(document).on("click", ".bucketClick", function(){
 	console.log("session storage stuff works...kinda");
 	console.log(currId);
 	window.location.href="/bookmarks"
-	//local storage or session storage? 
-})
+});

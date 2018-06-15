@@ -21,7 +21,8 @@
         <a class="navbar-brand" href="#">
             <img id="logo" src="image/logo.png" alt="Logo"> 
         </a>
-            Welcome,<h3 id = "name"> </h3>
+        <span class="navbar-text" id="name">
+        </span>
     </nav>
     <!-- table -->
     <table class="table table-light" id="bookmark-table">
@@ -49,12 +50,12 @@
         crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
         crossorigin="anonymous"></script>
-    <script>
-        // get the values from the tables
-        var name = sessionStorage.getItem('username');
-        console.log(name);
-        document.getElementById('name').innerHTML = name;
-    </script>
+        <script>
+            // get the values from the tables
+            var name = sessionStorage.getItem('username');
+            console.log(name);
+            document.getElementById('name').innerHTML = "Welcome,     " + name;
+        </script>
 
 </body>
 
