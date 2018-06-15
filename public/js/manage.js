@@ -15,8 +15,11 @@ $(document).ready(function () {
         event.preventDefault();
 
         if (!bucketName.val().trim() || !photoUrl.val().trim()) {
+            $(".password-mismatch-left").empty();
+            $(".password-mismatch-left").text("ERROR: empty column");
             return;
         }
+        
         //create a new bucket object          
         var newBucket = {
             name: bucketName.val().trim(),

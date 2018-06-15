@@ -62,6 +62,7 @@ $(document).ready(function () {
 
         } else {
           console.log("does not match database");
+          $(".password-mismatch").text("Incorrect Username or Password");
           // $('#myModal').modal('show');
 
         }
