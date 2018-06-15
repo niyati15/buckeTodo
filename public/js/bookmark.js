@@ -5,10 +5,13 @@ $(function () {
       window.location.href = "/login";
   }
     var userId = sessionStorage.getItem('id');
-    var linkNumber = 0;
-
-    $.get("/api/user/:id/bucket/:bucketId/bookmark", function (res) {
-        // MSFIDOSignatureAssertion(res);
+    var bucketId = sessionStorage.getItem('bucketId');    
+    var linkNumber = 1;
+    console.log(bucketId)
+ 
+    $.get("/api/user/"+userId+"/bucket/"+bucketId+"/bookmark", function (res) {
+        console.log(res);
+        iteration(res);
     });
 
     // iterate through json object we got from query call

@@ -1,7 +1,7 @@
 {
   "development": {
     "username": "root",
-    "password": "6sept1993",
+    "password": "password",
     "database": "bucketodo_DB",
     "host": "127.0.0.1",
     "dialect": "mysql"
