@@ -391,3 +391,8 @@ strong{
     height: 30px;
     width: 30px;
 }
+
+table {
+    border: 3px solid gray;
+ }
+ 
