@@ -43,9 +43,10 @@ $(function () {
 		for (var i = 0; i < obj.length; i++) {
 			var currBucket = obj[i].name;
 			var currPhoto = obj[i].photo
+			var currId = obj[i].id;
 			if (checker(bucketArray, currBucket, currPhoto) === false) {
 				bucketArray.push(currBucket, currPhoto);
-				appendHTML(currBucket, currPhoto);
+				appendHTML(currBucket, currPhoto, currId);
 			}
 		}
 	}
@@ -62,24 +63,36 @@ $(function () {
 	}
 
 	// append new bucket card onti DOM
-	function appendHTML(bucketName, currPhoto) {
+	function appendHTML(bucketName, currPhoto, currId) {
 		console.log(currPhoto);
 		var incoming = $(".container");
-		var bucketView = "<div class='card addBucket' >" +
-			"<div class='card-header'><strong>" + bucketName + "</strong></div>" +
-			"<div class='card-body card-bucket crtBckt');>" +
-
-			"<img src='" + currPhoto + "' style='color:blue;' >" +
-			"</div>" +
-
-			"<div class='card-footer'>" +
-			"<a href='/bookmarks' class='card-link'><strong>" + "<img src='/../image/view.png' class='viewbucket'> "  + "</strong></a>" + 
-			"<a href='/bookmark' class='card-link'><strong>" + "<img src='/../image/add.png' class='viewbucket' style=':;'> " + "</strong></a>" +
-			"</div>" +
-			"</div>"
+		var bucketView = "<div class='card addBucket' data-id='" + currId +"' >" +
+							 "<div class='card-header'><strong>" + bucketName + "</strong>"+
+							 "</div>" +
+							 "<div class='card-body card-bucket crtBckt');>" +
+							 	"<img src='" + currPhoto + "' style='color:blue;' >" +
+							 "</div>" +
+							 "<div class='card-footer'>" +
+								"<a href='/bookmarks' class='card-link'><strong>" + 
+								"<img src='/../image/view.png' class='viewbucket'> "  + "</strong>"+
+								"</a>" + 
+								"<a href='/bookmark' class='card-link'><strong>" + 
+									"<img src='/../image/add.png' class='viewbucket' style=':;'> " + "</strong>"+
+								"</a>" +
+							 "</div>" +
+							"</div>"
 		incoming.append(bucketView);
 	}
 
-
 });
 
+
+$(document).on("click", ".addBucket", function(){
+	console.log("before any session storage");
+	currId = $(this).data("id");
+	sessionStorage.removeItem("bucketId");
+	sessionStorage.setItem("bucketId", currId);
+	console.log("session storage stuff works...kinda");
+	console.log(currId);
+	window.location.href="/bookmarks"
+});

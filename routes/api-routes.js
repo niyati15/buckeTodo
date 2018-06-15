@@ -89,7 +89,9 @@ module.exports = function (app) {
             }
         })
             .then(function (dbBookmarks) {
+
                 res.json(dbBookmarks)
+                // res.sendFile(path.join(__dirname, "../public/bookmark.html"));
             })
         console.log("/user/:id/:bucketID/bookmark");
     });
