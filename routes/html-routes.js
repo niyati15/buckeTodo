@@ -30,7 +30,7 @@ module.exports = function (app) {
     res.sendFile(path.join(__dirname, "../public/homepage.html"));
   });
 
-  app.get("/viewbookmark", function (req, res) {
+  app.get("/bookmarks", function (req, res) {
     res.sendFile(path.join(__dirname, "../public/bookmark.html"));
   });
 };

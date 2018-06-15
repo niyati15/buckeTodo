@@ -1,4 +1,4 @@
-
+var something;
 $(function() {
 var userID = sessionStorage.getItem('id');
 	// //on click of log in button
@@ -39,9 +39,10 @@ var userID = sessionStorage.getItem('id');
 		for (var i = 0; i < obj.length; i++) {
 			var currBucket = obj[i].name;
 			var currPhoto = obj[i].photo
+			var currId = obj[i].id;
 			if (checker(bucketArray, currBucket, currPhoto) === false) {
 				bucketArray.push(currBucket, currPhoto);
-				appendHTML(currBucket, currPhoto);
+				appendHTML(currBucket, currPhoto, currId);
 			}
 		}
 	}
@@ -58,24 +59,38 @@ var userID = sessionStorage.getItem('id');
 	}
 
 	// append new bucket card onti DOM
-	function appendHTML(bucketName, currPhoto) {
+	function appendHTML(bucketName, currPhoto, currId) {
 		console.log(currPhoto);
 		var incoming = $(".container");
-		var bucketView = "<div class='card addBucket' ><a href='#'>" +
-						 "<div class='card-header'><strong>" + bucketName + "</strong></div>" +
-							"<div class='card-body crtBckt' style='background:blue;' href='#'>"  +
-
-							"<img src='" + currPhoto + "' style='color:blue;'>" +	
-							"</div>" +
-					
-						"<div class='card-footer'>" +
-						"<a href='#' class='card-link'><strong>" + "View " + bucketName+ "</strong></a>" + "<br>" +
-						"<a href='/bookmark' class='card-link'><strong>" + "Add to "+ bucketName +"</strong></a>" +
-						"</div>" +
-						"</a></div>" 
+		var bucketView = "<div class='card addBucket' >"+
+							"<div data-id='" + currId +"'class='bucketClick'>" +
+								"<div class='card-header'><strong>" + bucketName + "</strong>"+
+								"</div>" +
+								"<div class='card-body crtBckt' style='background:blue;' href='#'>"  +
+									"<img src='" + currPhoto + "' style='color:blue;'>" +	
+								"</div>" +
+								"<div class='card-footer'>" +
+									"<a href='#' class='card-link'><strong>" + "View " + bucketName+ "</strong >"+
+									"</a>" + 
+									"<br>" +
+									"<a href='/viewbookmark' class='card-link'><strong>" + "Add to "+ bucketName +"</strong>"+
+									"</a>" +
+								"</div>" +
+							"</div>"+
+						"</div>" 
 		incoming.append(bucketView);
 	}
 
-
 });
 
+
+$(document).on("click", ".bucketClick", function(){
+	console.log("before any session storage");
+	currId = $(this).data("id");
+	sessionStorage.removeItem("bucketId");
+	sessionStorage.setItem("bucketId", currId);
+	console.log("session storage stuff works...kinda");
+	console.log(currId);
+	window.location.href="/bookmarks"
+	//local storage or session storage? 
+})
