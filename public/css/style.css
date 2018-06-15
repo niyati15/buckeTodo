@@ -332,6 +332,12 @@ form.login a:hover
     margin-right: auto;
 }
 
+.password-mismatch-left {
+    color: #ec5560;
+    padding-left: 1.25rem;
+    padding-top: 1.25rem;
+}
+
 .addBucket{
     width: 22%;
     height: 250px;
